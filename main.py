@@ -22,27 +22,31 @@ def message_start(message):
 @bot.message_handler(commands=['monday'])
 def get_monday_schedule(message):
     monday_schedule = manager.get_monday_schedule()
+    monday_schedule = '\n'.join([lesson[0] for lesson in monday_schedule])
     bot.reply_to(message, monday_schedule)
 
 @bot.message_handler(commands=['tuesday'])
 def get_tuesday_schedule(message):
     tuesday_schedule = manager.get_tuesday_schedule
+    tuesday_schedule = '\n'.join([lesson[0] for lesson in tuesday_schedule])
     bot.reply_to(message, tuesday_schedule)
 
 @bot.message_handler(commands=['wednesday'])
 def get_wednesday_schedule(message):
     wednesday_schedule = manager.get_wednesday_schedule
+    wednesday_schedule = '\n'.join([lesson[0] for lesson in wednesday_schedule])
     bot.reply_to(message, wednesday_schedule)
     
 @bot.message_handler(commands=['thursday'])
 def get_thursday_schedule(message):
     thursday_schedule = manager.get_thursday_schedule
+    thursday_schedule = '\n'.join([lesson[0] for lesson in thursday_schedule])
     bot.reply_to(message, thursday_schedule)
     
 @bot.message_handler(commands=['friday'])
 def get_friday_schedule(message):
     friday_schedule = manager.get_friday_schedule
+    friday_schedule = '\n'.join([lesson[0] for lesson in friday_schedule])
     bot.reply_to(message, friday_schedule)
-
 
 bot.infinity_polling()
