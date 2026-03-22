@@ -1,0 +1,3 @@
+token = ""
+
+DATABASE = "schedule.db"
